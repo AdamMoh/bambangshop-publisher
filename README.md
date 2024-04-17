@@ -77,7 +77,25 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. We still need an interface or trait in this BambangShop case. The interface is needed to define the methods that the subscribers must implement. This way, the publisher can notify the subscribers without knowing the concrete type of the subscribers. This is important because the publisher should not be tightly coupled with the subscribers.
+
+2. DashMap is necessary because we need to access the data based on the unique id. Using Vec will make the access time O(n) that makes it's not efficient while using DashMap will make the access time O(1) that means DashMap more efficient and.
+
+3. Singleton pattern could technically be used in Rust, it doesn't directly address the thread safety concerns that DashMap handles. DashMap provides a more explicit and Rust-like solution for concurrent access to shared data, making it a better fit for ensuring thread safety in this context.
+
+
 
 #### Reflection Publisher-2
 
+1. Separating "Service" and "Repository" from the Model in the MVC pattern promotes better code organization, adherence to design principles, improved testability, and enhanced maintainability and flexibility(Single Responsibility Principle) in the long run.
+
+2. Relying solely on the Model without separating concerns into Service and Repository layers could result in increased code complexity for each model. Interactions between models would be more tightly coupled, making the codebase harder to maintain, understand, and extend over time.
+
+3. Postman is a tool for testing the APIs that we made in our application, and Postman also provides a feature to make a collection of requests that we can use to test our application and share to our team members.
+
 #### Reflection Publisher-3
+1. It's reasonable to assume that the Push model of the Observer Pattern is being employed, where subscribers are passively notified of updates by the publisher when new programs are added.
+
+2. The Pull model offers the advantage of subscribers retrieving data only when needed, which can be beneficial in reducing unnecessary data transfer and improving efficiency. However, the risk of using stale data is a significant drawback that must be carefully considered.
+
+3. Not using multi-threading in the notification process could lead to sequential processing, blocking behavior, increased latency, scalability issues, and inefficient resource utilization.
